@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class Selenoid {
     public static URL getVideoUrl(String sessionId) {
-        String server = Credentials.credentials.env();
+        String server = Credentials.credentials.server();
         String videoUrl = "https://" + server + "/video/" + sessionId + ".mp4";
 
         try {

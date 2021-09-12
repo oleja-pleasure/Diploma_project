@@ -1,5 +1,6 @@
 package tests.api;
 
+import annotations.Layer;
 import config.lombok.DataLombok;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static tests.api.specs.Specs.request;
 import static tests.api.specs.Specs.response;
 
-
+@Layer("Api")
 public class ReqresTests {
     @Test
     @Tag("api")

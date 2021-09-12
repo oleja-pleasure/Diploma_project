@@ -1,5 +1,6 @@
 package tests.mobile;
 
+import annotations.Layer;
 import com.codeborne.selenide.Configuration;
 import config.Credentials;
 import helpers.Attach;
@@ -25,7 +26,7 @@ public class MobileTestBase {
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
     }
-
+    @Layer("Mobile")
     @BeforeEach
     public void startDriver() {
         open();
