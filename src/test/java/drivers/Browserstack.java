@@ -35,7 +35,7 @@ public class Browserstack implements WebDriverProvider {
 
         AndroidDriver androidDriver = null;
         try {
-            androidDriver = new AndroidDriver(new URL("http://"+Credentials.credentials.server()+"/wd/hub"), desiredCapabilities);
+            androidDriver = new AndroidDriver(new URL("http://" + Credentials.credentials.server() + "/wd/hub"), desiredCapabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

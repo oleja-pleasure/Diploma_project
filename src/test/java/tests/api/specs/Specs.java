@@ -16,6 +16,6 @@ public class Specs {
     public static ResponseSpecification response = new ResponseSpecBuilder()
             .expectStatusCode(201)
             .expectBody("name", is("morpheus"))
-            .expectBody( "job", is("leader"))
+            .expectBody("job", is("leader"))
             .build();
 }

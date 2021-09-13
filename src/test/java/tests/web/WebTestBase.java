@@ -1,6 +1,5 @@
-package tests.ui;
+package tests.web;
 
-import annotations.Layer;
 import com.codeborne.selenide.Configuration;
 import config.Credentials;
 import helpers.Attach;
@@ -14,7 +13,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 
 public class WebTestBase {
-    @Layer("UI")
+
     @BeforeAll
     public static void setup() {
         String login = Credentials.credentials.login();

@@ -1,6 +1,5 @@
 package tests.mobile;
 
-import annotations.Layer;
 import com.codeborne.selenide.Configuration;
 import config.Credentials;
 import helpers.Attach;
@@ -13,6 +12,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
+import static io.qameta.allure.Allure.step;
 
 public class MobileTestBase {
 
@@ -20,16 +20,18 @@ public class MobileTestBase {
     public static void setup() {
         String env = "Local";
         addListener("AllureSelenide", new AllureSelenide());
-        if (Credentials.credentials.server().contains("browserstack")){env = "Browserstack";}
+        if (Credentials.credentials.server().contains("browserstack")) {
+            env = "Browserstack";
+        }
         Configuration.browser = "drivers." + env;
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
     }
-    @Layer("Mobile")
+
     @BeforeEach
     public void startDriver() {
-        open();
+        step("Запуск драйвера", () -> open());
     }
 
     @AfterEach

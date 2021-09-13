@@ -9,7 +9,7 @@ public class Browserstack {
         return given()
                 .auth().basic(Credentials.credentials.login(), Credentials.credentials.password())
                 .when()
-                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
+                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
                 .then()
                 .statusCode(200)
                 .log().body()
