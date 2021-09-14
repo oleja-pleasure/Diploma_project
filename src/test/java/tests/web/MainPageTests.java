@@ -2,6 +2,7 @@ package tests.web;
 
 import annotations.Layer;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 @Layer("UI")
 @Owner("Paleev O.")
 @Feature("Main Page")
+@Issue("HOM-234")
 public class MainPageTests extends WebTestBase {
 
     static final String MAINPAGE = "https://www.tinkoff.ru/";
