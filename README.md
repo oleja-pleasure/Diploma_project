@@ -52,5 +52,5 @@ PASS - пароль от Selenoid/BrowserStack
 ![TestOps2](/images/TestOps2.jpg)  
 ![TestOps](/images/TestOps.jpg) 
    
-### В тасках Jira отображаются привязанные тест-кейсы из Allure TestOps  
+### В тасках Jira отображаются привязанные тест-кейсы и лончи из Allure TestOps  
 ![Jira1](/images/Jira1.jpg) 
