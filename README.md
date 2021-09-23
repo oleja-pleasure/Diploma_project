@@ -3,10 +3,17 @@
 * UI тесты на главную страницу tinkoff.ru
 * API тесты на reqres.in
 * UI тест на Android приложение Wikipedia  
+  
 В проекте использованы следующие технологии:  
-<img src="images/logo/JAVA.svg" width="40" height="40"> | <img src="images/logo/Junit5.svg" width="40" height="40"> | <img src="images/logo/Gradle.svg" width="40" height="40"> | <img src="images/logo/Selenide.svg" width="40" height="40"> | <img src="images/logo/Rest-Assured.svg" width="40" height="40"> | <img src="images/logo/Intelij_IDEA.svg" width="40" height="40"> | <img src="images/logo/Appium.svg" width="40" height="40"> | <img src="images/logo/GitHub.svg" width="40" height="40"> | <img src="images/logo/Jenkins.svg" width="40" height="40"> | <img src="images/logo/Selenoid.svg" width="40" height="40"> | <img src="images/logo/Browserstack.svg" width="40" height="40"> | <img src="images/logo/Allure Report.svg" width="40" height="40"> | <img src="images/logo/Telegram.svg" width="40" height="40"> | <img src="images/logo/Allure TestOps.svg" width="40" height="40"> | <img src="images/logo/Jira.svg" width="40" height="40">  
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---  
-Java | Junit5 | Gradle | Selenide | Rest-Assured | IntelliJ IDEA | Appium | Github |  Jenkins | Selenoid | BrowserStack | Allure Report | Telegram | AlLure TestOps | Atlassian Jira  
+    
+  <img src="images/logo/JAVA.svg" width="40" height="40"> | <img src="images/logo/Junit5.svg" width="40" height="40"> | <img src="images/logo/Gradle.svg" width="40" height="40"> | <img src="images/logo/Selenide.svg" width="40" height="40"> | <img src="images/logo/Rest-Assured.svg" width="40" height="40"> | <img src="images/logo/Intelij_IDEA.svg" width="40" height="40"> | <img src="images/logo/Appium.svg" width="40" height="40"> | <img src="images/logo/GitHub.svg" width="40" height="40">
+  --- | --- | --- | --- | --- | --- | --- | ---
+  Java | Junit5 | Gradle | Selenide | Rest-Assured | IntelliJ IDEA | Appium | Github
+      
+  <img src="images/logo/Jenkins.svg" width="40" height="40"> | <img src="images/logo/Selenoid.svg" width="40" height="40"> | <img src="images/logo/Browserstack.svg" width="40" height="40"> | <img src="images/logo/Allure Report.svg" width="40" height="40"> | <img src="images/logo/Telegram.svg" width="40" height="40"> | <img src="images/logo/Allure TestOps.svg" width="40" height="40"> | <img src="images/logo/Jira.svg" width="40" height="40">
+  --- | --- | --- | --- | --- | --- | --- 
+  Jenkins | Selenoid | BrowserStack | Allure Report | Telegram | Allure TestOps | Atlassian Jira
+  
 ### Запуск джобы в Jenkins  
   
 ![JenkinsJob](/images/JenkinsJob.jpg)  
