@@ -1,7 +1,9 @@
 package tests.api;
 
 import annotations.Layer;
-import config.lombok.DataLombok;
+import config.models.User;
+import config.models.UserJob;
+import config.models.UserLogin;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -25,11 +27,11 @@ public class ReqresTests {
     @Tag("api")
     @DisplayName("Получение имени пользователя")
     public void getUsersFirstName() {
-        DataLombok janet = given()
+        User janet = given()
                 .get("https://reqres.in/api/users/2")
                 .then()
                 .statusCode(200)
-                .extract().as(DataLombok.class);
+                .extract().as(User.class);
         assertEquals("Janet", janet.getUserData().getFirst_name());
     }
 
@@ -57,9 +59,13 @@ public class ReqresTests {
                         .then()
                         .spec(Specs.response)
                         .extract().path("id");
+        UserJob newjob = UserJob.builder()
+                .name("morpheus")
+                .job("zion resident")
+                .build();
         given()
                 .contentType(JSON)
-                .body("{\"name\":\"morpheus\",\"job\":\"zion resident\"}")
+                .body(newjob)
                 .when()
                 .put("https://reqres.in/api/users/" + response)
                 .then()
@@ -89,10 +95,13 @@ public class ReqresTests {
     @Tag("api")
     @DisplayName("Ошибка при авторизации без пароля")
     public void unsuccessfulLogin() {
+        UserLogin missPass = UserLogin.builder()
+                .email("morpheus@zion.com")
+                .build();
         String response =
                 given()
                         .contentType(JSON)
-                        .body("{\"email\":\"morpheus@zion.com\"}")
+                        .body(missPass)
                         .when()
                         .post("https://reqres.in/api/login")
                         .then()

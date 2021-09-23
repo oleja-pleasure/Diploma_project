@@ -3,12 +3,14 @@ package tests.web;
 import annotations.JiraIssue;
 import annotations.JiraIssues;
 import annotations.Layer;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -27,9 +29,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Бизнес'", () ->
-                $x("//span/a/span[text()=\"Бизнес\"]/..").click());
+                $(byText("Бизнес")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p/nobr[text()=\"Онлайн-банк\"]").exists());
+                $(byText("Онлайн-банк")).should(Condition.exist));
     }
 
     @Test
@@ -39,9 +41,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Касса'", () ->
-                $x("//span/a/span[text()=\"Касса\"]/..").click());
+                $(byText("Касса")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p[contains(text(), \"Прием онлайн-платежей\")]").exists());
+                $(byText("Прием онлайн-платежей")).should(Condition.exist));
     }
 
     @Test
@@ -51,9 +53,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Инвестиции'", () ->
-                $x("//span/a/span[text()=\"Инвестиции\"]/..").click());
+                $(byText("Инвестиции")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p[text()=\"Инвестируйте в ценные бумаги\"]").exists());
+                $(byText("Инвестируйте в ценные бумаги")).should(Condition.exist));
     }
 
     @Test
@@ -63,9 +65,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Страхование'", () ->
-                $x("//span/a/span[text()=\"Страхование\"]/..").click());
+                $(byText("Страхование")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p[text()=\"Электронное ОСАГО\"]").exists());
+                $(byText("Электронное ОСАГО")).should(Condition.exist));
     }
 
     @Test
@@ -75,9 +77,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Сим-карта'", () ->
-                $x("//span/a/span[text()=\"Сим-карта\"]/..").click());
+                $(byText("Сим-карта")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p[text()=\"Попробуйте бесплатно сим-карту Тинькофф\"]").exists());
+                $(byText("Попробуйте бесплатно сим-карту Тинькофф")).should(Condition.exist));
     }
 
     @Test
@@ -87,9 +89,9 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Путешествия'", () ->
-                $x("//span/a/span[text()=\"Путешествия\"]/..").click());
+                $(byText("Путешествия")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//p[text()=\"Авиабилеты с кэшбэком до 7%\"]").exists());
+                $(byText("Авиабилеты с кэшбэком до 7%")).should(Condition.exist));
     }
 
     @Test
@@ -99,8 +101,8 @@ public class MainPageTests extends WebTestBase {
         step("Открытие главной страницы", () ->
                 open(MAINPAGE));
         step("Открытие вкладки 'Развлечения'", () ->
-                $x("//span/a/span[text()=\"Развлечения\"]/..").click());
+                $(byText("Развлечения")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $x("//a/span/*[text()=\"Сегодня в кино\"]").exists());
+                $(byText("Сегодня в кино")).should(Condition.exist));
     }
 }
