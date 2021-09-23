@@ -1,7 +1,6 @@
 package helpers;
 
 import config.Credentials;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 

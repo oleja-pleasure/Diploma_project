@@ -1,6 +1,7 @@
 package tests.mobile;
 
 import com.codeborne.selenide.Configuration;
+import config.Credentials;
 import drivers.Mobile;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -15,8 +16,6 @@ import static helpers.Attach.getSessionId;
 import static io.qameta.allure.Allure.step;
 
 public class MobileTestBase {
-
-    static String driver = System.getProperty("server","LocalMobile");
 
     @BeforeAll
     public static void setup() {
@@ -34,10 +33,11 @@ public class MobileTestBase {
 
     @AfterEach
     public void afterEach() {
-        if (driver.equals("Browserstack")) {
+        if (Credentials.credentials.server() != null) {
             String sessionId = getSessionId();
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
+            Attach.browserConsoleLogs();
             closeWebDriver();
             Attach.attachVideoBrowserStack(sessionId);
         } else {
