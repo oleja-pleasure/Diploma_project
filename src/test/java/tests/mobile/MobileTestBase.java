@@ -37,7 +37,6 @@ public class MobileTestBase {
             String sessionId = getSessionId();
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
-            Attach.browserConsoleLogs();
             closeWebDriver();
             Attach.attachVideoBrowserStack(sessionId);
         } else {
