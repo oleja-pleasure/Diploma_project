@@ -2,6 +2,7 @@ package tests.mobile;
 
 import com.codeborne.selenide.Configuration;
 import config.Credentials;
+import drivers.Mobile;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -18,12 +19,8 @@ public class MobileTestBase {
 
     @BeforeAll
     public static void setup() {
-        String env = "Local";
         addListener("AllureSelenide", new AllureSelenide());
-        if (Credentials.credentials.server().contains("browserstack")) {
-            env = "Browserstack";
-        }
-        Configuration.browser = "drivers." + env;
+        Configuration.browser = Mobile.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
@@ -36,7 +33,7 @@ public class MobileTestBase {
 
     @AfterEach
     public void afterEach() {
-        if (Credentials.credentials.server().contains("browserstack")) {
+        if (Credentials.credentials.server() != null) {
             String sessionId = getSessionId();
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
