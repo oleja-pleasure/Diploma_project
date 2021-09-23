@@ -43,7 +43,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Касса'", () ->
                 $(byText("Касса")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Прием онлайн-платежей")).should(Condition.exist));
+                $(byText("Прием онлайн-платежей для вашего бизнеса")).should(Condition.exist));
     }
 
     @Test
@@ -103,6 +103,6 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Развлечения'", () ->
                 $(byText("Развлечения")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Сегодня в кино")).should(Condition.exist));
+                $(byText("Поиск по развлечениям")).should(Condition.exist));
     }
 }
