@@ -31,7 +31,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Бизнес'", () ->
                 $(byText("Бизнес")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Онлайн-банк")).should(Condition.exist));
+                $(byText("Онлайн-банк")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Касса'", () ->
                 $(byText("Касса")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Прием онлайн-платежей для вашего бизнеса")).should(Condition.exist));
+                $(byText("Прием онлайн-платежей для вашего бизнеса")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -55,7 +55,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Инвестиции'", () ->
                 $(byText("Инвестиции")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Инвестируйте в ценные бумаги")).should(Condition.exist));
+                $(byText("Инвестируйте в ценные бумаги")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Страхование'", () ->
                 $(byText("Страхование")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Электронное ОСАГО")).should(Condition.exist));
+                $(byText("Электронное ОСАГО")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Сим-карта'", () ->
                 $(byText("Сим-карта")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Попробуйте бесплатно сим-карту Тинькофф")).should(Condition.exist));
+                $(byText("Попробуйте бесплатно сим-карту Тинькофф")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Путешествия'", () ->
                 $(byText("Путешествия")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Авиабилеты с кэшбэком до 7%")).should(Condition.exist));
+                $(byText("Авиабилеты с кэшбэком до 7%")).shouldBe(Condition.visible));
     }
 
     @Test
@@ -103,6 +103,6 @@ public class MainPageTests extends WebTestBase {
         step("Открытие вкладки 'Развлечения'", () ->
                 $(byText("Развлечения")).parent().click());
         step("Проверка открытой вкладки", () ->
-                $(byText("Поиск по развлечениям")).should(Condition.exist));
+                $(byText("Поиск по развлечениям")).shouldBe(Condition.visible));
     }
 }
