@@ -13,6 +13,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 
 public class WebTestBase {
+    String server = Credentials.credentials.server();
 
     @BeforeAll
     public static void setup() {
@@ -24,17 +25,14 @@ public class WebTestBase {
 
     @AfterEach
     public void afterEach() {
-        if (Credentials.credentials.server() != null) {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        if (server!=null && server.equals("selenoid.autotests.cloud")) {
             String sessionId = getSessionId();
-            Attach.screenshotAs("Last screenshot");
-            Attach.pageSource();
-            Attach.browserConsoleLogs();
             closeWebDriver();
             Attach.attachVideoSelenoid(sessionId);
         } else {
-            Attach.screenshotAs("Last screenshot");
-            Attach.pageSource();
-            Attach.browserConsoleLogs();
             closeWebDriver();
         }
     }

@@ -10,7 +10,7 @@ public class Web {
     static String server = Credentials.credentials.server();
 
     public static void webDriver() {
-        if (server != null) {
+        if (server!=null && server.equals("selenoid.autotests.cloud")) {
             Configuration.remote = String.format("https://%s:%s@%s/wd/hub", login, password, server);
             DesiredCapabilities capabilities = new DesiredCapabilities();
 

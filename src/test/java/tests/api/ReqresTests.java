@@ -32,7 +32,7 @@ public class ReqresTests {
                 .then()
                 .statusCode(200)
                 .extract().as(User.class);
-        assertEquals("Janet", janet.getUserData().getFirst_name());
+        assertEquals("Janet", janet.getUserData().getFirstName());
     }
 
     @Test
@@ -59,10 +59,12 @@ public class ReqresTests {
                         .then()
                         .spec(Specs.response)
                         .extract().path("id");
+
         UserJob newjob = UserJob.builder()
                 .name("morpheus")
                 .job("zion resident")
                 .build();
+
         given()
                 .contentType(JSON)
                 .body(newjob)
@@ -70,7 +72,8 @@ public class ReqresTests {
                 .put("https://reqres.in/api/users/" + response)
                 .then()
                 .statusCode(200)
-                .body("name", is("morpheus"), "job", is("zion resident"));
+                .body("name", is("morpheus"),
+                        "job", is("zion resident"));
     }
 
     @Test
@@ -98,6 +101,7 @@ public class ReqresTests {
         UserLogin missPass = UserLogin.builder()
                 .email("morpheus@zion.com")
                 .build();
+
         String response =
                 given()
                         .contentType(JSON)

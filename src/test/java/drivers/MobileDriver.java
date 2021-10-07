@@ -11,7 +11,7 @@ import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Mobile implements WebDriverProvider {
+public class MobileDriver implements WebDriverProvider {
     String login = Credentials.credentials.login();
     String password = Credentials.credentials.password();
     static String server = System.getProperty("server", "127.0.0.1:4723");
@@ -32,7 +32,7 @@ public class Mobile implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        if (Credentials.credentials.password() != null) {
+        if (server!= null && server.equals("hub.browserstack.com")) {
             // Set your access credentials
             desiredCapabilities.setCapability("browserstack.user", login);
             desiredCapabilities.setCapability("browserstack.key", password);
